@@ -28,26 +28,24 @@ function arrayMaxMin(arr) {
     let valorMax = 0;
     let valorMin = 0;
     let arrayRetorno = [];
+    let i = 0;
 
-    for (let i = 0; i < arr.length; i++) {
+    while (i < arr.length) {
 
         if (arr[i] > valorMax) {
 
             valorMax = arr[i];
         }
-    }
 
-    valorMin = valorMax;
+        if (valorMin == 0 && valorMin != arr[i]) {
 
-    for (let i = 0; i < arr.length; i++) {
-
-        if (arr[i] < valorMin) {
+            valorMin = arr[i];
+        } else if (arr[i] < valorMin) {
 
             valorMin = arr[i];
         }
+        i++;
     }
-
     arrayRetorno = [valorMin, valorMax];
-
     return arrayRetorno;
 }
